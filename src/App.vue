@@ -1,19 +1,19 @@
 <template>
 	<div id="app">
         <Header />
-		<router-view />
+		<AlbumCoverDescription />
 	</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
 import Header from "@/components/Header.vue";
+import AlbumCoverDescription from "@/components/AlbumCoverDescription.vue";
 
 @Component({
 	components: {
         Header,
-		HelloWorld
+		AlbumCoverDescription
 	}
 })
 export default class App extends Vue {}
