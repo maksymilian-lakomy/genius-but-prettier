@@ -1,21 +1,26 @@
 <template>
 	<header>
 		<nav class="nav--left">
-			<button>A</button>
+			<IconButton>A</IconButton>
 		</nav>
 		<nav class="nav--center">
-			<button>B</button>
+			<IconButton>B</IconButton>
 		</nav>
 		<nav class="nav--right">
-			<button>C</button>
+			<IconButton>C</IconButton>
 		</nav>
 	</header>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import IconButton from "@/components/IconButton.vue";
 
-@Component({})
+@Component({
+    components: {
+        IconButton
+    },
+})
 export default class App extends Vue {
 }
 </script>

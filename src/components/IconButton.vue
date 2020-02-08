@@ -1,15 +1,18 @@
 <template>
-	<div class = "button">
+	<button class="button">
 		<slot />
-	</div>
+		<span v-if="text" v-html="text"/>
+	</button>
 </template>
 
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
-export default class IconButton extends Vue {}
+export default class IconButton extends Vue {
+	@Prop({type: String, default: undefined}) readonly text: string | undefined;
+}
 </script>
 
 <style lang="sass" scoped>
@@ -21,8 +24,8 @@ button
     outline: unset
     margin: unset
     padding: unset
-    height: 1.5rem
-    width: 1.5rem
+    min-height: 1.5rem
+    min-width: 1.5rem
 
     &::before
         cursor: pointer
@@ -32,4 +35,12 @@ button
         height: 200%
         top: -50%
         left: -50%
+
+    span
+        font-family: "Raleway", sans-serif
+        font-size: .75rem
+        font-weight: 500
+        display: block
+        text-align: center
+        margin-top: 4px
 </style>

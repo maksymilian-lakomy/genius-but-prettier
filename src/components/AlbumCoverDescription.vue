@@ -13,14 +13,12 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-export default class AlbumCoverDescription extends Vue {
-
-}
+export default class AlbumCoverDescription extends Vue  {}
 </script>
 
 <style lang="sass" scoped>
+
 section
-    margin: 0 1.875rem
 
     h1,h2,h3,h4,h5,h6
         font-family: Raleway, sans-Serif
@@ -54,7 +52,6 @@ section
             top: calc(#{$margin-top} / -2)
             left: calc(50% - #{$width} / 2)
             background-color: white
-
 
     p
         line-height: 1.5rem

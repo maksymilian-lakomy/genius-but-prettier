@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<Header />
-		<AlbumCover />
+        <AlbumCover />
 	</div>
 </template>
 
@@ -12,21 +12,23 @@ import AlbumCover from "@/components/AlbumCover.vue";
 
 @Component({
 	components: {
-		Header,
-		AlbumCover
-	}
+        Header,
+        AlbumCover,
+	},
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="sass">
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Raleway:400,500,700,900&display=swap')
-html
+
+html, body
     height: 100%
+    overflow: auto
 
 body
-    margin: unset
-    height: inherit
+    margin: 0
+    padding: 0
 
 #app
 	font-family: 'Libre Baskerville', serif
