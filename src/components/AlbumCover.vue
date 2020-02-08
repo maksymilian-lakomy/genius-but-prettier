@@ -23,6 +23,7 @@ export default class AlbumCover extends Vue {}
 
 <style lang="sass" scoped>
 .album-cover
+    padding-top: 7rem
     display: flex
     flex-direction: column
     justify-content: flex-end
