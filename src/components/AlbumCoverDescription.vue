@@ -49,7 +49,7 @@ section
             $width: 2.5rem
             position: absolute
             content: ""
-            height: 1px
+            height: 2px
             width: $width
             top: calc(#{$margin-top} / -2)
             left: calc(50% - #{$width} / 2)

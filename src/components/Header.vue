@@ -1,13 +1,13 @@
 <template>
 	<header>
 		<nav class="nav--left">
-			<button>B</button>
+			<button>A</button>
 		</nav>
 		<nav class="nav--center">
 			<button>B</button>
 		</nav>
 		<nav class="nav--right">
-			<button>B</button>
+			<button>C</button>
 		</nav>
 	</header>
 </template>
@@ -24,6 +24,9 @@ export default class App extends Vue {
 header
     display: grid
     grid-template-columns: repeat(3, calc(100% / 3))
+    position: absolute
+    width: 100%
+    z-index: 10000
 
     nav
         height: 1.5rem
