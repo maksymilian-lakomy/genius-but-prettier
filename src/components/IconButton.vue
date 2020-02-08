@@ -1,13 +1,14 @@
 <template>
-	<button>
+	<div class = "button">
 		<slot />
-	</button>
+	</div>
 </template>
 
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
+@Component
 export default class IconButton extends Vue {}
 </script>
 
