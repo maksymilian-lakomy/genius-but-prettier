@@ -17,7 +17,6 @@ export default class AlbumCoverDescription extends Vue  {}
 </script>
 
 <style lang="sass" scoped>
-
 section
 
     h1,h2,h3,h4,h5,h6

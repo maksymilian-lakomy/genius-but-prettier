@@ -22,12 +22,14 @@ export default class AlbumCover extends Vue {}
 </script>
 
 <style lang="sass" scoped>
+@import "@/styles/variables.sass"
+
 .album-cover
-    padding-top: 7rem
+    padding-top: $headerOffset
     display: flex
     flex-direction: column
     justify-content: flex-end
-    height: inherit
+    height: calc(100% - #{$headerOffset})
     background-image: url(https://www.1001albums.co.uk/wp-content/uploads/2016/06/Scott-Walker-Scott-4.png)
     position: relative
     z-index: 0
