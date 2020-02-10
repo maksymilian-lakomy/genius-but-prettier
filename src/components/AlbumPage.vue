@@ -60,17 +60,15 @@ export default class AlbumPage extends Vue {
 
 	get navPointerLeftInPercentage() {
 		return `${this.navPointerLeft * 100}%`;
-    }
-    
-    mounted(): void {
-        if (!(this.$refs.content instanceof HTMLElement))
-            return;
-        let element: HTMLElement = this.$refs.content;
-        if (element.scrollHeight > element.clientHeight)
-            this.onBottomOfContent = false;
-        else 
-            this.onBottomOfContent = true;
-    }
+	}
+
+	mounted(): void {
+		if (!(this.$refs.content instanceof HTMLElement)) return;
+		let element: HTMLElement = this.$refs.content;
+		if (element.scrollHeight > element.offsetHeight)
+			this.onBottomOfContent = false;
+		else this.onBottomOfContent = true;
+	}
 
 	onNavButtonClick(event: Event, buttonClicked: number): void {
 		this.activeButton = buttonClicked;
@@ -97,14 +95,11 @@ export default class AlbumPage extends Vue {
 	onContentScroll(event: Event): void {
 		if (!(event.srcElement instanceof HTMLElement)) return;
 		let element: HTMLElement = event.srcElement;
-        if (element.scrollTop > 0)
-            this.onTopOfContent = false;
-        else 
-            this.onTopOfContent = true;
-		if (element.scrollTop == element.scrollHeight - element.clientHeight)
+		if (element.scrollTop > 0) this.onTopOfContent = false;
+		else this.onTopOfContent = true;
+		if (element.scrollTop == element.scrollHeight - element.offsetHeight)
 			this.onBottomOfContent = true;
-        else
-            this.onBottomOfContent = false;
+		else this.onBottomOfContent = false;
 	}
 }
 </script>
@@ -154,6 +149,7 @@ export default class AlbumPage extends Vue {
     
     &__content
         margin: 0 $content-width-margins
+        margin-bottom: $content-height-margins
         overflow-y: scroll
         position: relative
 
