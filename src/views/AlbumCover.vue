@@ -1,8 +1,8 @@
 <template>
 	<div class="album-cover">
 		<div class="album-cover__content">
-			<AlbumCoverDescription style = "margin-bottom: 2rem; z-index: 100"/>
-			<IconButton class = "album-cover__content__button" :text="'See more'">\/</IconButton>
+			<AlbumCoverDescription style="margin-bottom: 2rem; z-index: 100" />
+			<IconButton class="album-cover__content__button" :text="'See more'" @click="pushView('albumPage')">\/</IconButton>
 		</div>
 	</div>
 </template>
@@ -16,9 +16,13 @@ import IconButton from "@/components/IconButton.vue";
 	components: {
 		AlbumCoverDescription,
 		IconButton
-	},
+	}
 })
-export default class AlbumCover extends Vue {}
+export default class AlbumCover extends Vue {
+    pushView(viewName: string): void {
+        this.$router.push(viewName);
+    }
+}
 </script>
 
 <style lang="sass" scoped>
