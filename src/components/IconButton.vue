@@ -1,5 +1,5 @@
 <template>
-	<button class="button">
+	<button class="button" @click="$emit('click')">
 		<slot />
 		<span v-if="text" v-html="text"/>
 	</button>
