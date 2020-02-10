@@ -1,22 +1,17 @@
 <template>
 	<div id="app">
 		<Header />
-        <!-- <AlbumCover />   -->
-        <AlbumPage />
+         <router-view/>
 	</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/Header.vue";
-import AlbumCover from "@/components/AlbumCover.vue";
-import AlbumPage from "@/components/AlbumPage.vue";
 
 @Component({
 	components: {
         Header,
-        AlbumCover,
-        AlbumPage,
 	},
 })
 export default class App extends Vue {}
