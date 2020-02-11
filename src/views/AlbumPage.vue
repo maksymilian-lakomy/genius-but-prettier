@@ -1,8 +1,11 @@
 <template>
 	<div class="album-page">
-        <AlbumPageNavigationBar />
-        <AlbumPageVinyl />
-        <AlbumPageContent />
+		<AlbumPageNavigationBar />
+        <component :is="header" />
+		<AlbumPageVinyl />
+		<AlbumPageContent>
+            <router-view :header.sync="header"/>
+		</AlbumPageContent>
 	</div>
 </template>
 
@@ -12,14 +15,15 @@ import AlbumPageNavigationBar from "@/components/AlbumPage/AlbumPageNavigationBa
 import AlbumPageVinyl from "@/components/AlbumPage/AlbumPageVinyl.vue";
 import AlbumPageContent from "@/components/AlbumPage/AlbumPageContent.vue";
 
-@Component ({
-    components: {
-        AlbumPageNavigationBar,
-        AlbumPageVinyl,
-        AlbumPageContent,
-    }
+@Component({
+	components: {
+		AlbumPageNavigationBar,
+		AlbumPageVinyl,
+		AlbumPageContent
+	}
 })
 export default class AlbumPage extends Vue {
+    header: Vue | undefined;
 }
 </script>
 
