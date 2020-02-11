@@ -3,11 +3,11 @@
 		<span>
 			<button
 				:class="{'nav__button--active': activeButton === 0}"
-				@click="onNavButtonClick($event, 0)"
+				@click="onNavButtonClick($event, 0), pushView('about')"
 			>About</button>
 			<button
 				:class="{'nav__button--active': activeButton === 1}"
-				@click="onNavButtonClick($event, 1)"
+				@click="onNavButtonClick($event, 1), pushView('songs')"
 			>Songs</button>
 		</span>
 		<span>
@@ -22,8 +22,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import RouterPushMixin from "@/mixins/RouterPushMixin.ts";
 
-@Component
+@Component ({
+    mixins: [
+        RouterPushMixin
+    ]
+})
 export default class AlbumPageNavigationBar extends Vue {
 	activeButton: number = 0;
     navPointerLeft: number = 0;
@@ -84,7 +89,6 @@ nav
 
         &:last-of-type
             margin-right: 0
-            
 
     .nav__button--active
         opacity: 1

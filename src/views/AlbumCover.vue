@@ -2,7 +2,7 @@
 	<div class="album-cover">
 		<div class="album-cover__content">
 			<AlbumCoverDescription style="margin-bottom: 2rem; z-index: 100" />
-			<IconButton class="album-cover__content__button" :text="'See more'" @click="pushView('albumPage')">\/</IconButton>
+			<IconButton class="album-cover__content__button" :text="'See more'" @click="pushView('about')">\/</IconButton>
 		</div>
 	</div>
 </template>
@@ -11,17 +11,19 @@
 import { Component, Vue } from "vue-property-decorator";
 import AlbumCoverDescription from "@/components/AlbumCoverDescription.vue";
 import IconButton from "@/components/IconButton.vue";
+import RouterPushMixin from "@/mixins/RouterPushMixin.ts";
 
 @Component({
 	components: {
 		AlbumCoverDescription,
 		IconButton
-	}
+    },
+    mixins: [
+        RouterPushMixin
+    ]
 })
 export default class AlbumCover extends Vue {
-    pushView(viewName: string): void {
-        this.$router.push(viewName);
-    }
+
 }
 </script>
 

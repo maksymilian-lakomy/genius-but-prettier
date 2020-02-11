@@ -24,8 +24,8 @@ import AlbumPageVinyl from "@/components/AlbumPage/AlbumPageVinyl.vue";
     }
 })
 export default class AlbumPageAbout extends Vue {
-    mounted(): void {
-        this.$emit('header', AlbumPageVinyl);
+    created(): void {
+        this.$emit('update:header', AlbumPageVinyl);
     }
 }
 </script>
